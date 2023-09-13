@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 
 /**
  * print_last_digit - Entry point
@@ -12,16 +11,11 @@ int print_last_digit(int d)
 	int x;
 
 	x = d % 10;
-	if (d >= 0)
-	{
-		_putchar('0' + x);
-	}
-	else if (d < 0)
-
+	if (d < 0)
 	{
 		x = (-1 * d) % 10;
-		_putchar('0' + x);
 	}
 
+		_putchar(x + '0');
 		return (x);
 }
