@@ -27,8 +27,13 @@ int main(void)
 		else
 		{
 			printf("%i", a);
+
 		}
+		if (a < 100)
+		{
 			printf(" ");
+		}
+
 	}
 
 			printf("\n");
