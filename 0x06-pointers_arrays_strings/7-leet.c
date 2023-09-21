@@ -7,33 +7,22 @@
  */
 char *leet(char *e)
 {
+	char *result = e;
+	char letter[] = "aAeEoOtTlL";
+	char number[] = "4433007711";
 	int c;
 
-	for (c = 0; e[c] != 0x00; c++)
+	for (; *e; e++)
 	{
-		char i = e[c];
-
-		if (i == 'a' || i == 'A')
+		for (c = 0; c < 10; c++)
 		{
-			e[c] = '4';
-		}
-		else if (i == 'e' || i == 'E')
-		{
-			e[c] = '3';
-		}
-		else if (i == 'o' || i == 'O')
-		{
-			e[c] = '0';
-		}
-		else if (i == 't' || i == 'T')
-		{
-			e[c] = '7';
-		}
-		else if (i == 'l' || i == 'L')
-		{
-			e[c] = '1';
+			if (*e == letter[c] || *e == letter[c] - 32)
+			{
+				*e = number[c];
+				break;
+			}
 		}
 	}
 
-			return (e);
+			return (result);
 }
