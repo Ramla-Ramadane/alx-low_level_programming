@@ -8,32 +8,25 @@
  */
 char *cap_string(char *c)
 {
-	int s = 0;
-	int k;
-	char separate[] = {' ', '\t', '\n', ',', ';', '.', '!', '?',
+	int a, b;
+	char separators[] = {' ', '\t', '\n', ',', ';', '.', '!', '?',
 	'"', '(', ')', '{', '}'};
 
-	while (c[s] != 0x00)
+	for (a = 0; c[a] != 0x00; a++)
 	{
-		if (isalpha(c[s]) && !isalpha(c[s - 1]))
+		if (a == 0 && c[a] >= 'a' && c[a] <= 'z')
 		{
-			c[s] = toupper(c[s]);
+			c[a] = toupper(c[a]);
 		}
-		else
+
+		for (b = 0; b <= 12; b++)
 		{
-			c[s] = tolower(c[s]);
-		}
-		for (k = 0; k <= 12; k++)
-		{
-			if (c[s] == separate[k])
+			if (c[a] == separators[b] && (c[a + 1] >= 'a' && c[a + 1] <= 'z'))
 			{
-				if (isalpha(c[s + 1]))
-				{
-					c[s] = toupper(c[s]);
-				}
+			c[a + 1] = toupper(c[a + 1]);
 			}
-	}
-		c++;
+		}
+
 	}
 
 			return (c);
