@@ -1,0 +1,1 @@
+This project is a part of the ALX Software Engineering program. It focuses on memory allocation in C using the malloc and free functions. Understanding dynamic memory allocation is crucial for efficient memory management and creating more flexible programs.
