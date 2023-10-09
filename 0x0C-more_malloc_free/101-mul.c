@@ -11,13 +11,16 @@
 int main(int argc, char *argv[])
 {
 	long mul = 1;
+	long *p;
 	int c, b;
 
-	if (argc == 1)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+
+	p = malloc((argc - 1) * sizeof(long));
 
 	for (c = 1; c < argc; c++)
 	{
@@ -29,10 +32,12 @@ int main(int argc, char *argv[])
 				exit(98);
 			}
 		}
+		p[c - 1] = strtol(argv[c], NULL, 10);
 
 		mul = mul * strtol(argv[c], NULL, 10);
 	}
 
 		printf("%ld\n", mul);
+		free(p);
 		return (0);
 }
