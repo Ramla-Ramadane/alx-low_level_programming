@@ -12,9 +12,6 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *p;
-	unsigned int min;
-
-	min = (n < strlen(s2)) ? n : strlen(s2);
 
 	if (s1 == NULL)
 	{
@@ -40,7 +37,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		if (s2 != NULL)
 		{
-			strncat(p, s2, min);
+			strncat(p, s2, n);
+		}
+		if (n >= strlen(s2) && s2 != NULL)
+		{
+			strcat(p, s2);
 		}
 	}
 
