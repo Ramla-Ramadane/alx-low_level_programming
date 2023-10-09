@@ -35,13 +35,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			strcpy(p, s1);
 		}
+		if (s2 != NULL)
+		{
+			strncat(p, s2, n);
+		}
 		if (n >= strlen(s2))
 		{
 			strcat(p, s2);
-		}
-		else
-		{
-			strncat(p, s2, n);
 		}
 	}
 
