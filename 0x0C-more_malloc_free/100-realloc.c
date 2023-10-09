@@ -20,7 +20,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	if (ptr == NULL)
 	{
-		return (malloc(new_size * sizeof(int)));
+		return (malloc(new_size));
 	}
 	if (new_size == 0)
 	{
@@ -29,8 +29,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	else
 	{
-		np = malloc(new_size * sizeof(int));
-
 		if (new_size > old_size)
 		{
 			copy_bytes = old_size;
