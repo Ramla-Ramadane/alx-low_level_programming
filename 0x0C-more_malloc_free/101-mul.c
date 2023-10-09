@@ -10,7 +10,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int mul = 1, c, b;
+	long mul = 1;
+	int c, b;
 
 	if (argc == 1)
 	{
@@ -29,10 +30,9 @@ int main(int argc, char *argv[])
 			}
 		}
 
-		mul = mul * atoi(argv[c]);
+		mul = mul * strtol(argv[c], NULL, 10);
 	}
 
-		printf("%d\n", mul);
+		printf("%ld\n", mul);
 		return (0);
 }
-
