@@ -39,9 +39,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			strncat(p, s2, n);
 		}
-		if (n >= strlen(s2) && s2 != NULL)
+		if (n >= strlen(s2))
 		{
-			strcat(p, s2);
+
 		}
 	}
 
