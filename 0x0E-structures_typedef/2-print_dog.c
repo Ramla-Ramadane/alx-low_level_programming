@@ -10,11 +10,12 @@ void print_dog(struct dog *d)
 {
 	if (d == NULL)
 	{
-		printf(" ");
+		;
 	}
 	if ((*d).name == NULL || (*d).owner == NULL)
 	{
-		printf("nil\n");
+		printf("Name: nil\n");
+		printf("Owner: nil\n");
 	}
 	else
 	{
