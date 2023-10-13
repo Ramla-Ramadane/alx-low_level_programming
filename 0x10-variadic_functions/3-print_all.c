@@ -10,6 +10,7 @@
 void print_all(const char * const format, ...)
 {
 	const char *p = format;
+	char *string;
 	va_list print;
 
 	va_start(print, format);
@@ -34,13 +35,14 @@ void print_all(const char * const format, ...)
 				}
 			case 's':
 				{
-					if (va_arg(char *) == NULL)
+					string = va_arg(print, char*);
+					if (string == NULL)
 					{
 						printf("(nil)");
 					}
-					if (va_arg(char *) != NULL)
+					if (string != NULL)
 					{
-						printf("%s", va_arg(char *));
+						printf("%s", string);
 					}
 					break;
 				}
