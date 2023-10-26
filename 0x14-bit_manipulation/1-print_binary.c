@@ -19,11 +19,12 @@ void print_binary(unsigned long int n)
 	{
 		;
 	}
-	for (; change >= 0; change--)
+	while (change >= 0)
 	{
 		if ((n >> change) & 1)
 			printf("1");
 		else
 			printf("0");
+		change--;
 	}
 }
