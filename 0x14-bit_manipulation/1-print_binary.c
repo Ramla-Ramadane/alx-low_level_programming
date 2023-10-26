@@ -7,14 +7,23 @@
  */
 void print_binary(unsigned long int n)
 {
+	unsigned long int temporary;
+	int change;
+
 	if (n == 0)
 	{
 		printf("0");
 		return;
 	}
-	if (n > 1)
+	for (temporary = n, change = 0; (temporary >>= 1) > 0; change++)
 	{
-		print_binary(n >> 1);
+		;
 	}
-	printf("%ld", n & 1);
+	for (; change >= 0; change--)
+	{
+		if ((n >> change) & 1)
+			printf("1");
+		else
+			printf("0");
+	}
 }
